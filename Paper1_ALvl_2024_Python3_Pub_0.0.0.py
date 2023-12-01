@@ -193,7 +193,7 @@ class Pattern():
         for Count in range(0, len(self.__PatternSequence)):
             try:
                 if self.__PatternSequence[Count] == self.__Symbol and PatternString[Count] != self.__Symbol:
-                    return False._Symbol
+                    return False
             except Exception as ex:
                 print(f"EXCEPTION in MatchesPattern: {ex}")
         return True
