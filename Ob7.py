@@ -141,6 +141,7 @@ class Puzzle():
                     for P in self.__AllowedPatterns:
                         CurrentSymbol = self.__GetCell(Row, Column).GetSymbol()
                         MatchedPattern = P.MatchesPattern(PatternString, CurrentSymbol)
+                        print(P.MatchesPattern(PatternString, CurrentSymbol), StartRow, StartColumn, PatternString, CurrentSymbol)
                         MatchedPatterns += MatchedPattern
                         if MatchedPattern > 0:
                             self.__GetCell(StartRow, StartColumn).AddToNotAllowedSymbols(CurrentSymbol)
@@ -152,7 +153,8 @@ class Puzzle():
                             self.__GetCell(StartRow - 2, StartColumn).AddToNotAllowedSymbols(CurrentSymbol)
                             self.__GetCell(StartRow - 1, StartColumn).AddToNotAllowedSymbols(CurrentSymbol)
                             self.__GetCell(StartRow - 1, StartColumn + 1).AddToNotAllowedSymbols(CurrentSymbol)
-                    return MatchedPatterns * 10
+                    if MatchedPatterns > 0:
+                        return MatchedPatterns * 10
                 except:
                     pass
         return 0
