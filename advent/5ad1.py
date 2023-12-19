@@ -1,5 +1,5 @@
 from multiprocessing import Process
-file = open("C:/Computer Science/Paper 1/5ad.txt", "r")
+file = open("C:/Computer Science/Paper 1/advent/5ad.txt", "r")
 
 inp = []
 

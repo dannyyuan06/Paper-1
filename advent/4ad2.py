@@ -1,4 +1,4 @@
-file = open("C:/Computer Science/Paper 1/4ad.txt", "r")
+file = open("C:/Computer Science/Paper 1/advent/4ad.txt", "r")
 
 inp = []
 totals = []

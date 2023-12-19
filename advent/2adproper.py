@@ -1,4 +1,4 @@
-file = open("C:/Computer Science/Paper 1/2adprop.txt", "r")
+file = open("C:/Computer Science/Paper 1/advent/2adprop.txt", "r")
 
 inp = []
 

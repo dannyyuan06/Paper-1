@@ -1,4 +1,4 @@
-file = open("C:/Computer Science/Paper 1/3ad.txt", "r")
+file = open("C:/Computer Science/Paper 1/advent/3ad.txt", "r")
 
 inp = []
 
@@ -16,15 +16,13 @@ def check_spot(pointer_x, pointer_y, length, inp):
   coods.append([pointer_x + length, pointer_y - 1])
   coods.append([pointer_x + length, pointer_y])
   coods.append([pointer_x + length, pointer_y + 1])
-  gears = []
   for cood in coods:
     if cood[0] >= 0 and cood[1] >= 0 and cood[0] < len(inp[0]) and cood[1] < len(inp):
       char = inp[cood[1]][cood[0]]
-      if char == '*':
-        gears.append(cood)
-  return gears
+      if char != '.' and not char.isdigit():
+        return True
+  return False
 
-gears = {}
 total = 0
 for i in range(len(inp)):
   line = inp[i]
@@ -36,20 +34,14 @@ for i in range(len(inp)):
       if num_start == -1: num_start = j
       num_buffer += char
     elif num_buffer != "":
-      coods = check_spot(num_start, i, len(num_buffer), inp)
-      if len(coods) != 0:
-        for cood in coods:
-          if (str(cood[0]) + '_' + str(cood[1])) in gears.keys():
-            gears[str(cood[0]) + '_' + str(cood[1])].append(int(num_buffer))
-          else:
-            gears[str(cood[0]) + '_' + str(cood[1])] = [int(num_buffer)]
+      is_part = check_spot(num_start, i, len(num_buffer), inp)
+      if is_part:
+        total += int(num_buffer)
+        if (num_buffer) == "91": print(91)
       num_buffer = ""
       num_start = -1
 
-for key in gears:
-  if len(gears[key]) == 2:
-    total += gears[key][0] * gears[key][1]
-
-print(total)      
+print(total)
+      
 
     
