@@ -2,7 +2,7 @@ import copy
 import sys
 
 
-file = open("C:/Computer Science/Paper 1/advent/10ad.txt", "r")
+file = open("/Users/dannyyuan/Desktop/Code/Python/Paper-1/advent/10ad.txt", "r")
 text = file.read()
 inp = text.split("\n")
 file.close()
@@ -123,7 +123,7 @@ def recurse(point, inp, letter, counter):
 
 recurse([140, 140], inp, "A", counter)
 
-file = open("C:/Computer Science/Paper 1/advent/10adOut.txt", "w", encoding="utf-8")
+file = open("/Users/dannyyuan/Desktop/Code/Python/Paper-1/advent/10adOut.txt", "w", encoding="utf-8")
 file.write("\n".join(list(map(lambda x: "".join(x), inp))))
 file.close()
 

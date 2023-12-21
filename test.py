@@ -1,1 +1,4 @@
-print(1000 % 2)
+counter = 0
+for i in range(26501365):
+  counter += 1
+print(counter)
