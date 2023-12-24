@@ -17,7 +17,7 @@ starting_set = set()
 
 queue = [{f"{starting_cood[0]}_{starting_cood[1]}"}]
 counter = 0
-for _ in range(196):
+for _ in range(130):
   step_possibilies_set = queue.pop(0)
   step_possibilies = list(map(lambda x: list(map(lambda y: int(y), x.split("_"))), step_possibilies_set))
   new_step:set[str] = set()
